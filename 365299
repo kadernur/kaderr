@@ -1,0 +1,51 @@
+
+ Library Ieee;
+Use Ieee.std_logic_1164.all;
+Entity encod164 is
+port(input : in std_logic_vector(15 downto 0);
+
+     output : out std_logic_vector(4 downto 0));
+
+end encod164 ;
+
+Architecture encodBhv of encod164 is          // burda encoBhv yerine istedi?imiz ismi tan?mlayabiliriz.
+
+Begin
+
+output <= "1111"  When input(15)='1' else     // burda 15 degerini verdi?imiz zaman  c?k?sta da binary sistemde 15 degerinin al?r?z
+            
+         "1110" When input(14)='1' else
+
+         "1011" When input(13)='1' else
+     
+         "1100" When input(12)='1' else
+   
+         "1001" When input(11)='1' else
+
+         "1010" When input(10)='1' else
+
+         "1001" When input(9)='1' else
+
+         "1000" When input(8)='1' else
+ 
+         "0111" When input(7)='1' else
+          
+         "0110" When input(6)='1' else
+        
+         "0101" When input(5)='1' else
+
+         "0100" When input(4)='1' else
+
+         "0011" When input(3)='1' else
+
+         "0010" When input(2)='1' else
+
+         "0001" When input(1)='1' else
+
+          "0000" When input(0)='1' else
+        
+          "0000";
+end encodBhv ;
+ 
+ 
+
